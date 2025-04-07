@@ -1,9 +1,18 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, StyleSheet, TouchableOpacity, Text, Alert } from "react-native";
+import { router } from "expo-router";
 
-export default function Index() {
+export default function SignUp() {
+  function back() {
+    if (!router.canGoBack()) {
+      return Alert.alert("Não é possível voltar");
+    }
+    router.back();
+  }
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Criar conta</Text>
+      <TouchableOpacity onPress={back}>
+        <Text style={styles.back}>Voltar</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -14,8 +23,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  text: {
-    fontSize: 20,
+  back: {
+    fontSize: 16,
     fontWeight: "bold",
   },
+  title: { fontSize: 22 },
 });
