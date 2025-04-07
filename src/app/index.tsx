@@ -7,6 +7,13 @@ export default function Index() {
       <TouchableOpacity
         activeOpacity={0.7}
         style={styles.button}
+        onPress={() => router.navigate("/(drawer)")}
+      >
+        <Text style={styles.label}>Entrar</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        activeOpacity={0.7}
+        style={styles.button}
         onPress={() => router.navigate("/sign-up")}
       >
         <Text style={styles.label}>Criar Conta</Text>
