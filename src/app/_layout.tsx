@@ -1,35 +1,38 @@
-import { Tabs } from "expo-router";
+import { Drawer } from "expo-router/drawer";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { MaterialIcons } from "@expo/vector-icons";
 
 export default function Layout() {
   return (
-    <Tabs
-      screenOptions={{
-        headerShown: false,
-        tabBarLabelPosition: "beside-icon",
-        tabBarActiveTintColor: "#000",
-        tabBarInactiveTintColor: "#CECECE",
-      }}
-    >
-      <Tabs.Screen
-        name="index"
-        options={{
-          tabBarLabel: "Sign in",
-          tabBarIcon: ({ color }: { color: any }) => (
-            <MaterialIcons name="login" size={24} color={color} />
-          ),
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <Drawer
+        screenOptions={{
+          drawerActiveTintColor: "#000",
+          drawerInactiveTintColor: "#CECECE",
+          headerShown: false,
         }}
-      />
-
-      <Tabs.Screen
-        name="sign-up"
-        options={{
-          tabBarLabel: "Sign Up",
-          tabBarIcon: ({ color }: { color: any }) => (
-            <MaterialIcons name="person-add" size={24} color={color} />
-          ),
-        }}
-      />
-    </Tabs>
+      >
+        <Drawer.Screen
+          name="index"
+          options={{
+            drawerLabel: "Entrar",
+            title: "Entrar",
+            drawerIcon: ({ color }: { color: string }) => (
+              <MaterialIcons name="login" size={24} color={color} />
+            ),
+          }}
+        />
+        <Drawer.Screen
+          name="sign-up"
+          options={{
+            title: "Criar Conta",
+            drawerLabel: "Criar Conta",
+            drawerIcon: ({ color }: { color: string }) => (
+              <MaterialIcons name="person-add" size={24} color={color} />
+            ),
+          }}
+        />
+      </Drawer>
+    </GestureHandlerRootView>
   );
 }
