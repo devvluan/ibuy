@@ -25,6 +25,13 @@ export default function TabsLayout() {
           tabBarLabel: "Pedido",
         }}
       />
+
+      <Tabs.Screen
+        name="product"
+        options={{
+          tabBarButton: () => null,
+        }}
+      />
     </Tabs>
   );
 }

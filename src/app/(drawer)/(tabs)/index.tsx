@@ -1,9 +1,14 @@
-import { View, StyleSheet, Text } from "react-native";
+import { router } from "expo-router";
+import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 
 export default function Products() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Lista de Produtos</Text>
+
+      <TouchableOpacity onPress={() => router.navigate("/products/52")}>
+        <Text>Abrir Produto</Text>
+      </TouchableOpacity>
     </View>
   );
 }
