@@ -5,7 +5,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 export default function DrawerLayout() {
   return (
     <GestureHandlerRootView>
-      <Drawer>
+      <Drawer screenOptions={{ title: "iBuy" }}>
         <Drawer.Screen
           name="(tabs)"
           options={{
